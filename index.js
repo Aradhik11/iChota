@@ -30,7 +30,7 @@ app.use(`${API}/`,userRouter);
 app.use('/public',express.static(__dirname + '/public'));
 
 const hostname = env.HOST;
-const port = env.PORT;
+const PORT = process.env.PORT || 3009;
 
 mongoose.connect(env.MONGO_CONNECTION_URL).then(
     () => {
@@ -40,7 +40,6 @@ mongoose.connect(env.MONGO_CONNECTION_URL).then(
     console.error(error)
 })
 
-
-app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}`)
+app.listen(PORT, () => {
+    console.log(`Server running at http://${hostname}:${PORT}`)
 })

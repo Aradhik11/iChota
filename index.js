@@ -32,7 +32,7 @@ app.use('/public',express.static(__dirname + '/public'));
 const hostname = env.HOST;
 const port = env.PORT;
 
-mongoose.connect(env.MONGO_CONNECTION_LOCAL).then(
+mongoose.connect(env.MONGO_CONNECTION_URL).then(
     () => {
         console.log('Connected to Database')
     } 

@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const cors = require('cors');
 const passport = require("passport");
 const path = require('path');
 const fs = require('fs');
@@ -19,6 +20,11 @@ if (!fs.existsSync(uploadsDir)) {
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');

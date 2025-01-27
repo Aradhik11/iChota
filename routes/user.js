@@ -20,7 +20,7 @@ const upload = multer({
 
 // User routes
 router.post('/create', 
-  upload.single('cvPath'), 
+  upload.single('resume'), 
   userController.createUser
 );
 router.get('/:id', userController.getUserProfile);

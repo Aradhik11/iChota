@@ -2,7 +2,7 @@ const Form = require('../models/Form');
 
 exports.createUser = async (req, res) => {
     try {
-        const { firstName, lastName, email, phoneNumber, coverLetter } = req.body;
+        const { firstName, lastName, email, phone, coverLetter } = req.body;
         
         // Check if CV file was uploaded
         if (!req.file) {

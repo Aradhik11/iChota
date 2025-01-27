@@ -18,12 +18,12 @@ const FormSchema = new mongoose.Schema({
     lowercase: true,
     trim: true
   },
-  phoneNumber: {
+  phone: {
     type: String,
     required: true,
     trim: true
   },
-  cvPath: {
+  resume: {
     type: String,
     required: true
   },

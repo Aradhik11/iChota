@@ -9,14 +9,12 @@ exports.createUser = async (req, res) => {
           return res.status(400).json({ message: 'CV is required' });
         }
     
-      
-    
         const newUser = new Form({
           firstName,
           lastName,
           email,
-          phoneNumber,
-          cvPath: req.file.path,
+          phone,
+          resume: req.file.path,
           coverLetter
         });
 
